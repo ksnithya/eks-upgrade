@@ -1,0 +1,5 @@
+resource "null_resource" "eks_cluster_upgrade" {
+  provisioner "local-exec" {
+    command = "aws eks update-cluster-version --region ap-south-1 --name ${var.cluster-name} --kubernetes-version 1.27"
+  }
+}
